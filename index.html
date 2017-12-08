@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- 1. Load libraries -->
+    <!-- This makes ES6 stuff work for older ES5-only browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <!-- Angular needs this for bindings to work, among other things -->
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <!-- TypeScript's @() decorators need this -->
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <!-- And of course our module/path finder -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+    <!-- 3. Bootstrap and its dependencies -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <title>TastyTracker</title>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <app-main>Loading...</app-main>
+    </div>
+  </body>
+</html>

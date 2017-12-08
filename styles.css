@@ -1,0 +1,73 @@
+/* TASTYTRACKER CUSTOM STYLES AND ADDITIONAL OVERRIDES */
+
+.bigNumber {
+	font-weight: 700;
+	font-size: 2.5rem;
+}
+
+/* Override Bootstrap's modal "close" button opacity to get full-strength teal */
+.close {
+	opacity: 1;
+}
+
+.circle {
+	width: 13rem;
+	height: 13rem;
+	background-color: #EFE8C8;
+	border-radius: 6.5rem;
+	padding: 3rem 1rem;
+	margin-right: 1rem;
+}
+
+/* We need to specify a width for m-x-auto to work. */
+.edit-meals-width {
+	width: 35rem;
+}
+
+h1 {
+	color: #FFF;
+	font-weight: normal;
+	padding: 1rem;
+}
+
+h2 {
+	background-color: #EFE8C8;
+	padding: 0.75rem;
+}
+
+h4 {
+	font-weight: normal;
+	text-transform: uppercase !important;
+}
+
+.large {
+	font-size: 1.5rem !important;
+}
+
+.large-less {
+	font-size: 1.25rem !important;
+}
+
+#logo {
+	width: 17rem;
+	fill: #FFF;
+	padding: 1rem;
+}
+
+/* Get rid of the bottom border on Bootstrap's default modal header class */
+.modal-header {
+	border-bottom: none;
+}
+
+.red {
+	color: #9F0316;
+}
+
+a.red, a.red:link, a.red:visited, a.red:hover, a.red:active {
+	color: #9F0316;
+	text-decoration: none;
+}
+
+.tealBG {
+	background-color: #00746B;
+}

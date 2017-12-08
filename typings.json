@@ -1,0 +1,8 @@
+{
+  "name": "tastytracker",
+  "dependencies": {},
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.9.0+20170324193834",
+    "moment": "registry:dt/moment#2.11.1+20161010105546"
+  }
+}

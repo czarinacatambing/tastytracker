@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+	<!-- Font Awesome embed code -->
+  <script src="https://use.fontawesome.com/5aa5660200.js"></script>
+
+	<title>Tracker</title>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <!-- HERE GOES THE EDIT MEALS POP-UP -->
+      <!-- Pop up modal at the beginning to minimize visual/functional interference from other components -->
+      <div class="modal fade" id="editRestaurants" tabindex="-1" role="dialog" aria-labelledby="editRestaurantsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- Exit button -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h3 class="modal-title" id="editRestaurantsLabel">Edit restaurants</h3>
+            </div>
+
+            <div class="modal-body">
+              <form>
+                <!-- To add/delete restaurant -->
+                <div class="form-group row">
+                  <!-- first custom select dropdown -->
+                  <label for="edit-restaurant-select" class="sr-only">Select restaurant</label>
+                    <div class="col-xs-8">
+                      <select class="form-control custom-select" id="edit-restaurant-select">
+                        <option> -Restaurant name- </option>
+                      </select>
+                    </div>
+                </div>
+
+                <!-- to type in new restaurant -->
+                <div class="form-group form-inline row">
+                <label for="edit-restaurant-input" class="sr-only">Edit or delete restaurant name</label>
+            			 <div class="col-xs-8">
+                    <input type="text" class="form-control" id="edit-restraurant-input"/>
+                    <a href="#" aria-label="Save changes">
+                      <i class="fa fa-check large" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Delete restaurant" class="red">
+                      <i class="fa fa-times large" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+
+                <!-- To confirm/alert user about action -->
+                <div class="alert alert-warning row" role="alert">
+                  <div class="col-xs-1">
+                    <i class="fa fa-exclamation-circle large" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-xs-11">
+                    <p>Deleting $RESTAURANTNAME will delete all $RESTAURANTNAME meals you've recorded.</p>
+                    <button type="button" class="btn btn-primary">OK, delete it</button><button type="button" class="btn btn-secondary m-l-1">Nope, keep it</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END OF EDIT MEALS POP-UP -->
+
+      <!-- HERE GOES THE APP NAME AND BRAND -->
+      <section>
+        <div class="row">
+          <div class="col-xs-12 text-xs-center tealBG">
+            <h1>TrackMe</h1>
+          </div>
+        </div>
+      </section>
+      <!-- END OF APP NAME AND BRAND -->
+
+      <!-- HERE GOES MAIN APP ITSELF -->
+      <div class="row">
+        <!-- PART 1: INPUT -->
+        <div class="col-xs-12 col-md-6 pl-0">
+          <section>
+            <header>
+              <h2 class="text-xs-center">What needs to be tracked?</h2>
+            </header>
+            <form>
+              <!-- Button to edit meals -->
+              <div class="col-xs-11 text-xs-right">
+                <a href="edit-meals.html"><i class="fa fa-pencil" aira-hidden="true"></i>edit meals</a>
+              </div>
+              <div class="form-group form-inline row">
+                <label for="spending-input" class="col-xs-4 col-form-label text-xs-right">I spent</label>
+                <div class="col-xs-7">
+                    $<input type="text" class="form-control" id="spending-input" />
+                </div>
+              </div>
+              <div class="form-group form-inline row">
+                <label for="restaurant-select" class="col-xs-4 col-form-label text-xs-right">at</label>
+                <div class="col-xs-7 ml-1">
+                  <select class="form-control custom-select" id="restaurant-select">
+                    <option>-Restaurant name-</option>
+                    <option value="new-restaurant">Enter new restaurant</option>
+                  </select>
+                  <a href="#" data-toggel="modal" data-target="#editRestaurants" aria-label="Edit restaurants"><i class="fa fa-pencil large-less" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="form-group form-inline row">
+                <label for="meal-select" class="col-xs-4 col-form-label text-xs-right">on</label>
+                <div class="col-xs-7 ml-1">
+                  <select class="form-group custom-select" id="meal-select">
+                    <option>- meal type -</option>
+                    <option>breakfast</option>
+                    <option>lunch</option>
+                    <option>dinner</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-inline row">
+                <label for="date-input" class="col-xs-4 col-form-label text-xs-right">on this day</label>
+                <div class="col-xs-7 ml-1">
+                  <input type="text" class="form-control" id="date-input"/> <a href="#" aria-label="Choose date"><i class="fa fa-calendar large-less" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn btn-primary ml-1">Save</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <!-- END OF PART 1 -->
+
+        <!-- PART 2: TOTALS -->
+        <div class="col-xs-12 col-md-6 mb-2 pr-0">
+          <section>
+            <header class="mb-3">
+              <h2 class="text-xs-center">TastyTotals</h2>
+            </header>
+            <div class="row mx-auto" style="width:30rem;">
+
+              <div class="col-xs-6 text-xs-center">
+                <div class="circle">
+                  <span class="bigNumber"><strong>$0</strong></span>
+                  <br /> spent on meals today
+                </div>
+            </div>
+
+            <div class="col-xs-6 text-xs-center">
+              <div class="circle">
+                <span class="bigNumber"><strong>$0</strong></span>
+                <br /> spent on meals this week
+              </div>
+          </div>
+          </div>
+        </section>
+      </div>
+        <!-- END OF PART 2 -->
+
+        <!-- PART 3: SHOW TRENDS -->
+        <section>
+          <header>
+            <div class="row">
+              <div class="col-xs-12 text-xs-center pl-0 pr-0">
+                <h2>Tasty Trends</h2>
+              </div>
+            </div>
+          </header>
+          <div class="row">
+            <div class="col-xs-12">
+              <p>TastyTracker keeps track of up to a year's worth of spending.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <header>
+                <h3>This week compared ot last week</h3>
+              </header>
+              Chart 1 goes here
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+              <form class="form-inline">
+                <header>
+                  <h3>On average, I spend this amount</h3>
+                </header>
+                <div class="form-group">
+                  <label for="time-chart-select" class="sr-only">Select time period</label>
+                  <select class="form-control custom-select" id="time-chart-select">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- END OF PART 3 -->
+
+
+      </div>
+
+      <!-- END OF MAIN APP -->
+
+
+
+    </div>
+
+    <!-- This should be at the end of your body section. Load jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

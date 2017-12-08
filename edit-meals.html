@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+	<!-- Font Awesome embed code -->
+	<script src="https://use.fontawesome.com/5aa5660200.js"></script>
+	<title>TastyTracker: Edit Meals</title>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Logo and brand here -->
+      <section>
+      <div class="row">
+        <div class="col-xs-12 text-xs-center tealBG">
+            <h1>TastyTracker</h1>
+        </div>
+      </div>
+    </section>
+    <!-- End logo and brand here -->
+    <!-- FORM STARTS HERE -->
+    <div class="row">
+      <section>
+        <header>
+          <div class="row">
+            <div class="col-xs-12 text-xs-center pl-0 pr-0">
+              <h2>Edit meals</h2>
+          </div>
+        </div>
+        </header>
+        <div class="row">
+          <div class="col-xs-12 offset-xs-4 text-xs-right mb-2">
+            <a href="index.html><i class="fa fa-arrow-right aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="edit-meals-width row mx-auto">
+          <div class="col-xs-8">
+            <form>
+              <!-- Allows one to pick restaurant -->
+              <div class-"form-group row edit-meals-width mx-auto">
+                <label for="restaurant-select" class="sr-only">select restaurant</label>
+                  <div class="col-xs-12">
+                    <select class="form-control custom-select" id="restaurant-select">
+                      <option>- restaurant name -</option>
+                    </select>
+                  </div>
+               </div>
+              <!-- Allows meal and date to be inputted -->
+              <div class="edit-meals-width row mb-1 mx-auto">
+                <div class="col-xs-3">
+                  $AMOUNT
+                </div>
+                <div class="col-xs-3">
+                  $DATE
+                </div>
+                <div class="col-xs-3">
+                  <a href="#" aria-label="Edit meal"><i class="fa fa-pencil large-less" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="form-group edit-meals-width row mb-1 mx-auto">
+                <div class="col-xs-3">
+                  <label for="amount-input" class="sr-only">edit amount</label>
+                  <input type="text" class="form-control" placeholder="$AMOUNT" id="amount-input"/>
+                </div>
+              <div class="col-xs-3">
+                <label for="meal-select" class="sr-only">edit meal type</label>
+                <select class="form-control custom-select" id="meal-select">
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                </select>
+              </div>
+              <div class="col-xs-3">
+                <label for="edit-restaurant-input" class="sr-only">edit date</label>
+                <input type="text" class="form-control" placeholder="$DATE" id="edit-restaurant-input"/>
+              </div>
+              <div class="col-xs-3">
+                <a href="#" aria-label="Change date"><i class="fa fa-calendar large-less" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Save changes"><i class="fa fa-check large" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Delete restaurant" class="red"><i class="fa fa-times large" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+
+
+
+      </section>
+    </div>
+    <!-- FORM ENDS HERE -->
+
+
+   </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
